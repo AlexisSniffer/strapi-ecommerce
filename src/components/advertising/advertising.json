@@ -1,0 +1,22 @@
+{
+  "collectionName": "components_advertising_advertisings",
+  "info": {
+    "displayName": "banner",
+    "icon": "audio-description",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "link": {
+      "type": "text"
+    },
+    "cover": {
+      "type": "media",
+      "multiple": false,
+      "required": true,
+      "allowedTypes": [
+        "images"
+      ]
+    }
+  }
+}
