@@ -1,0 +1,35 @@
+{
+  "collectionName": "components_variants_variants",
+  "info": {
+    "displayName": "Variants",
+    "icon": "address-card",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "price": {
+      "type": "decimal"
+    },
+    "discount": {
+      "type": "decimal"
+    },
+    "size": {
+      "type": "component",
+      "repeatable": false,
+      "component": "product-size.size"
+    },
+    "color": {
+      "type": "component",
+      "repeatable": false,
+      "component": "product-color.colors"
+    },
+    "sale_price": {
+      "type": "decimal",
+      "default": 0
+    },
+    "is_sale": {
+      "type": "boolean",
+      "default": false
+    }
+  }
+}
