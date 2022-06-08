@@ -7,7 +7,9 @@ module.exports = ({ env }) => ({
       database: env('DATABASE_NAME', 'strapi_ecommerce'),
       user: env('DATABASE_USERNAME', 'postgres'),
       password: env('DATABASE_PASSWORD', 'password'),
-      ssl: env.bool('DATABASE_SSL', false),
+      ssl: {
+        ca: env('DATABASE_SSL'),
+      },
     },
   },
 })
