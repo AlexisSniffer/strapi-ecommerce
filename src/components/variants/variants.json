@@ -1,35 +1,38 @@
 {
   "collectionName": "components_variants_variants",
   "info": {
-    "displayName": "Variants",
-    "icon": "address-card",
+    "displayName": "variants",
     "description": ""
   },
   "options": {},
   "attributes": {
+    "images": {
+      "type": "media",
+      "multiple": true,
+      "required": false,
+      "allowedTypes": [
+        "images"
+      ]
+    },
     "price": {
-      "type": "decimal"
+      "type": "decimal",
+      "required": true
     },
     "discount": {
       "type": "decimal"
     },
-    "size": {
-      "type": "component",
-      "repeatable": false,
-      "component": "product-size.size"
-    },
-    "color": {
-      "type": "component",
-      "repeatable": false,
-      "component": "product-color.colors"
-    },
-    "sale_price": {
-      "type": "decimal",
-      "default": 0
-    },
-    "is_sale": {
+    "isDiscount": {
       "type": "boolean",
-      "default": false
+      "default": false,
+      "required": true
+    },
+    "until": {
+      "type": "datetime"
+    },
+    "variant": {
+      "type": "component",
+      "repeatable": true,
+      "component": "variants.variation"
     }
   }
 }

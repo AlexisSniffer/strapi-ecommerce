@@ -1,0 +1,19 @@
+{
+  "collectionName": "components_variants_variations",
+  "info": {
+    "displayName": "variation",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "type": {
+      "type": "enumeration",
+      "enum": ["color", "size", "memory", "style"],
+      "required": true
+    },
+    "value": {
+      "type": "string",
+      "required": true
+    }
+  }
+}
