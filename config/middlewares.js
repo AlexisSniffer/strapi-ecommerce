@@ -1,4 +1,4 @@
-module.exports = [
+module.exports = ({ env }) => [
   'strapi::errors',
   'strapi::cors',
   'strapi::poweredBy',
@@ -18,15 +18,13 @@ module.exports = [
             "'self'",
             'data:',
             'blob:',
-            'dl.airtable.com',
-            'res.cloudinary.com',
+            `https://hafbuy-strapi-space.nyc3.digitaloceanspaces.com`,
           ],
           'media-src': [
             "'self'",
             'data:',
             'blob:',
-            'dl.airtable.com',
-            'res.cloudinary.com',
+            `https://hafbuy-strapi-space.nyc3.digitaloceanspaces.com`,
           ],
           upgradeInsecureRequests: null,
         },

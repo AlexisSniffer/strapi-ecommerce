@@ -10,11 +10,14 @@ module.exports = ({ env }) => ({
 
   upload: {
     config: {
-      provider: 'cloudinary',
+      provider: 'aws-s3',
       providerOptions: {
-        cloud_name: env('CLOUDINARY_NAME'),
-        api_key: env('CLOUDINARY_KEY'),
-        api_secret: env('CLOUDINARY_SECRET'),
+        accessKeyId: env('DO_SPACE_ACCESS_KEY'),
+        secretAccessKey: env('DO_SPACE_SECRET_KEY'),
+        endpoint: env('DO_SPACE_ENDPOINT'),
+        params: {
+          Bucket: env('DO_SPACE_BUCKET'),
+        },
       },
       actionOptions: {
         upload: {},
@@ -23,4 +26,20 @@ module.exports = ({ env }) => ({
       },
     },
   },
+
+  /*email: {
+    provider: 'nodemailer',
+    providerOptions: {
+      host: env('SMTP_HOST', 'smtp.example.com'),
+      port: env('SMTP_PORT', 587),
+      auth: {
+        user: env('SMTP_USERNAME'),
+        pass: env('SMTP_PASSWORD'),
+      },
+    },
+    settings: {
+      defaultFrom: 'hello@example.com',
+      defaultReplyTo: 'hello@example.com',
+    },
+  },*/
 })

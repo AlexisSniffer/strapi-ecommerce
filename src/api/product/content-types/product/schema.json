@@ -134,6 +134,12 @@
         }
       },
       "component": "variants.variants"
+    },
+    "orders_products": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::order-products.order-products",
+      "mappedBy": "product"
     }
   }
 }
