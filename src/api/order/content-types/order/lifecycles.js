@@ -73,6 +73,39 @@ module.exports = {
           `
         })
 
+        const subtotal = value.reduce(
+          (accumulator, current) => accumulator + current.price * current.qty,
+          0
+        )
+        const itbms = subtotal * 0.07
+        const total = subtotal + itbms
+        templateProducts += `
+          <tr>
+            <td style='padding:0.5rem; border: 1px solid #CCC; text-align: right;'></td>
+            <td style='padding:0.5rem; border: 1px solid #CCC; text-align: right;'></td>
+            <td style='padding:0.5rem; border: 1px solid #CCC; text-align: right;'><b>SUBTOTAL:</b></td>
+            <td style='padding:0.5rem; border: 1px solid #CCC; text-align: right;'>${money.format(
+              subtotal
+            )}</td>
+          </tr>
+          <tr>
+            <td style='padding:0.5rem; border: 1px solid #CCC; text-align: right;'></td>
+            <td style='padding:0.5rem; border: 1px solid #CCC; text-align: right;'></td>
+            <td style='padding:0.5rem; border: 1px solid #CCC; text-align: right;'><b>ITBMS:</b></td>
+            <td style='padding:0.5rem; border: 1px solid #CCC; text-align: right;'>${money.format(
+              itbms
+            )}</td>
+          </tr>
+          <tr>
+            <td style='padding:0.5rem; border: 1px solid #CCC; text-align: right;'></td>
+            <td style='padding:0.5rem; border: 1px solid #CCC; text-align: right;'></td>
+            <td style='padding:0.5rem; border: 1px solid #CCC; text-align: right;'><b>TOTAL:</b></td>
+            <td style='padding:0.5rem; border: 1px solid #CCC; text-align: right;'>${money.format(
+              total
+            )}</td>
+          </tr>
+        `
+
         const template = `
           <header>
             <h1>Orden #: ${order.order}</h1>
