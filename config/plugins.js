@@ -27,22 +27,6 @@ module.exports = ({ env }) => ({
     },
   },
 
-  /*email: {
-    provider: 'nodemailer',
-    providerOptions: {
-      host: 'smtp-mail.outlook.com', // env('SMTP_HOST', 'smtp.example.com'),
-      port: 587, // env('SMTP_PORT', 587),
-      auth: {
-        user: 'notificacionhafbuy@outlook.com', // env('SMTP_USERNAME'),
-        pass: 'Panama2023', // env('SMTP_PASSWORD'),
-      },
-    },
-    settings: {
-      defaultFrom: 'hello@example.com',
-      defaultReplyTo: 'hello@example.com',
-    },
-  },*/
-
   email: {
     config: {
       provider: 'nodemailer',
