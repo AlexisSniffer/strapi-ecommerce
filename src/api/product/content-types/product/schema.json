@@ -140,6 +140,17 @@
       "relation": "oneToMany",
       "target": "api::order-products.order-products",
       "mappedBy": "product"
+    },
+    "deliveryTime": {
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "type": "enumeration",
+      "enum": [
+        "Inmediato"
+      ]
     }
   }
 }
