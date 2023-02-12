@@ -149,8 +149,14 @@
       },
       "type": "enumeration",
       "enum": [
-        "Inmediato"
-      ]
+        "Inmediato",
+        "En 24 horas",
+        "En 48 horas",
+        "En 72 horas",
+        "Más de 72 horas"
+      ],
+      "required": true,
+      "default": "Más de 72 horas"
     }
   }
 }
