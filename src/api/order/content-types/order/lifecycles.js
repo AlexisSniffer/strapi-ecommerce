@@ -44,6 +44,7 @@ module.exports = {
         emailMap.get(el.product.createdBy.email).push({
           price: el.price,
           qty: el.qty,
+          detail: el.detail ?? '',
           product: {
             name: el.product.name,
             price: el.product.price,
@@ -59,7 +60,11 @@ module.exports = {
           templateProducts += `
             <tr>
               <td style='padding:0.5rem; border: 1px solid #CCC;'>
-                ${el.product.name}</td>
+                ${el.product.name}
+              </td>
+              <td style='padding:0.5rem; border: 1px solid #CCC;'>
+                ${el.detail}
+              </td>
               <td style='padding:0.5rem; border: 1px solid #CCC; text-align: right;'>
                 ${money.format(el.price)}
               </td>
@@ -83,6 +88,7 @@ module.exports = {
           <tr>
             <td style='padding:0.5rem; border: 1px solid #CCC; text-align: right;'></td>
             <td style='padding:0.5rem; border: 1px solid #CCC; text-align: right;'></td>
+            <td style='padding:0.5rem; border: 1px solid #CCC; text-align: right;'></td>
             <td style='padding:0.5rem; border: 1px solid #CCC; text-align: right;'><b>SUBTOTAL:</b></td>
             <td style='padding:0.5rem; border: 1px solid #CCC; text-align: right;'>${money.format(
               subtotal
@@ -91,12 +97,14 @@ module.exports = {
           <tr>
             <td style='padding:0.5rem; border: 1px solid #CCC; text-align: right;'></td>
             <td style='padding:0.5rem; border: 1px solid #CCC; text-align: right;'></td>
+            <td style='padding:0.5rem; border: 1px solid #CCC; text-align: right;'></td>
             <td style='padding:0.5rem; border: 1px solid #CCC; text-align: right;'><b>ITBMS:</b></td>
             <td style='padding:0.5rem; border: 1px solid #CCC; text-align: right;'>${money.format(
               itbms
             )}</td>
           </tr>
           <tr>
+            <td style='padding:0.5rem; border: 1px solid #CCC; text-align: right;'></td>
             <td style='padding:0.5rem; border: 1px solid #CCC; text-align: right;'></td>
             <td style='padding:0.5rem; border: 1px solid #CCC; text-align: right;'></td>
             <td style='padding:0.5rem; border: 1px solid #CCC; text-align: right;'><b>TOTAL:</b></td>
@@ -126,6 +134,7 @@ module.exports = {
             <table>
               <thead>
                 <th>Producto</th>
+                <th>Detalle</th>
                 <th>Precio</th>
                 <th>Cantidad</th>
                 <th>Subtotal</th>

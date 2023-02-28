@@ -31,6 +31,9 @@
       "relation": "manyToOne",
       "target": "api::order.order",
       "inversedBy": "orders_products"
+    },
+    "detail": {
+      "type": "string"
     }
   }
 }
