@@ -49,9 +49,7 @@
       "type": "media",
       "multiple": true,
       "required": true,
-      "allowedTypes": [
-        "images"
-      ],
+      "allowedTypes": ["images"],
       "pluginOptions": {
         "i18n": {
           "localized": false
@@ -150,6 +148,7 @@
       "type": "enumeration",
       "enum": [
         "Inmediato",
+        "Retirar en tienda",
         "En 24 horas",
         "En 48 horas",
         "En 72 horas",
