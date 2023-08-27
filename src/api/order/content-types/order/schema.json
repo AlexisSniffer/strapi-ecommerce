@@ -49,6 +49,12 @@
       "relation": "oneToMany",
       "target": "api::order-products.order-products",
       "mappedBy": "order"
+    },
+    "orders_payment": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::orders-payment.orders-payment",
+      "inversedBy": "order"
     }
   }
 }
