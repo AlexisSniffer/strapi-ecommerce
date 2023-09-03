@@ -1,0 +1,21 @@
+{
+  "kind": "singleType",
+  "collectionName": "advertisings",
+  "info": {
+    "singularName": "advertising",
+    "pluralName": "advertisings",
+    "displayName": "Advertising",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "slider": {
+      "type": "component",
+      "repeatable": true,
+      "component": "carousel.slider"
+    }
+  }
+}

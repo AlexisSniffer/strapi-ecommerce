@@ -1,0 +1,18 @@
+{
+  "collectionName": "components_carousel_sliders",
+  "info": {
+    "displayName": "Slider",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "alt": {
+      "type": "string"
+    },
+    "responsive": {
+      "type": "component",
+      "repeatable": true,
+      "component": "carousel.responsive"
+    }
+  }
+}

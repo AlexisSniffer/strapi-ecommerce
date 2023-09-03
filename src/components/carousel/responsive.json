@@ -1,0 +1,27 @@
+{
+  "collectionName": "components_carousel_responsives",
+  "info": {
+    "displayName": "Responsive",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "responsive": {
+      "type": "enumeration",
+      "enum": [
+        "xs",
+        "sm",
+        "md",
+        "lg"
+      ]
+    },
+    "slider": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images"
+      ]
+    }
+  }
+}
