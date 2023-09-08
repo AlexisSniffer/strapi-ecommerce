@@ -50,7 +50,9 @@
       "type": "media",
       "multiple": true,
       "required": true,
-      "allowedTypes": ["images"],
+      "allowedTypes": [
+        "images"
+      ],
       "pluginOptions": {
         "i18n": {
           "localized": false
@@ -157,6 +159,12 @@
       ],
       "required": true,
       "default": "Más de 72 horas"
+    },
+    "reviews": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::review.review",
+      "mappedBy": "product"
     }
   }
 }
