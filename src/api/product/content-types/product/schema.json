@@ -8,8 +8,7 @@
     "description": ""
   },
   "options": {
-    "draftAndPublish": true,
-    "populateCreatorFields": true
+    "draftAndPublish": true
   },
   "pluginOptions": {
     "i18n": {
@@ -110,9 +109,9 @@
           "localized": false
         }
       },
-      "type": "decimal",
+      "type": "integer",
       "default": 0,
-      "private": true
+      "max": 5
     },
     "subcategories": {
       "type": "relation",
