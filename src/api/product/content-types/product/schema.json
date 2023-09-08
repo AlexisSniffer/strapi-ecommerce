@@ -103,6 +103,18 @@
       },
       "type": "integer"
     },
+    "ratings": {
+      "pluginOptions": {
+        "i18n": {
+          "localized": false
+        }
+      },
+      "type": "integer",
+      "default": 0,
+      "max": 5,
+      "required": true,
+      "min": 0
+    },
     "subcategories": {
       "type": "relation",
       "relation": "manyToMany",
