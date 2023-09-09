@@ -10,7 +10,7 @@
       "type": "enumeration",
       "enum": [
         "talla",
-        "tamaño",
+        "tamano",
         "color",
         "gb",
         "memoria",
