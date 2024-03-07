@@ -3,8 +3,8 @@
   "collectionName": "order_billings",
   "info": {
     "singularName": "order-billing",
-    "pluralName": "orders-billings",
-    "displayName": "Orders Billing",
+    "pluralName": "order-billings",
+    "displayName": "Order Billing",
     "description": ""
   },
   "options": {
@@ -14,29 +14,37 @@
   "attributes": {
     "name": {
       "type": "string",
-      "required": true
+      "required": true,
+      "maxLength": 20
     },
     "lastname": {
       "type": "string",
-      "required": true
+      "required": true,
+      "maxLength": 20
     },
-    "adress": {
-      "type": "richtext",
-      "required": true
+    "address": {
+      "type": "text",
+      "required": true,
+      "maxLength": 200
     },
     "phone": {
-      "required": true,
-      "unique": false,
-      "type": "integer"
+      "type": "integer",
+      "required": true
     },
     "email": {
-      "type": "email"
+      "type": "email",
+      "required": true,
+      "maxLength": 100
+    },
+    "notes": {
+      "type": "text",
+      "maxLength": 100
     },
     "order": {
       "type": "relation",
-      "relation": "oneToOne",
+      "relation": "manyToOne",
       "target": "api::order.order",
-      "mappedBy": "orders_billing"
+      "inversedBy": "billing"
     }
   }
 }

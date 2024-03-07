@@ -4,7 +4,7 @@
   "info": {
     "singularName": "category",
     "pluralName": "categories",
-    "displayName": "Categories",
+    "displayName": "Category",
     "description": ""
   },
   "options": {
@@ -23,7 +23,8 @@
         }
       },
       "type": "string",
-      "required": true
+      "required": true,
+      "maxLength": 15
     },
     "slug": {
       "pluginOptions": {
@@ -32,7 +33,9 @@
         }
       },
       "type": "uid",
-      "targetField": "name"
+      "targetField": "name",
+      "required": true,
+      "maxLength": 20
     },
     "thumbnail": {
       "type": "media",
@@ -43,15 +46,37 @@
       ],
       "pluginOptions": {
         "i18n": {
-          "localized": true
+          "localized": false
         }
       }
     },
-    "subcategories": {
+    "category": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::category.category",
+      "inversedBy": "categories"
+    },
+    "categories": {
       "type": "relation",
       "relation": "oneToMany",
-      "target": "api::subcategory.subcategory",
+      "target": "api::category.category",
       "mappedBy": "category"
+    },
+    "isExpanded": {
+      "pluginOptions": {
+        "i18n": {
+          "localized": false
+        }
+      },
+      "type": "boolean",
+      "default": false,
+      "required": true
+    },
+    "products": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::product.product",
+      "inversedBy": "categories"
     }
   }
 }

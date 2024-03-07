@@ -4,7 +4,7 @@
   "info": {
     "singularName": "order",
     "pluralName": "orders",
-    "displayName": "Orders",
+    "displayName": "Order",
     "description": ""
   },
   "options": {
@@ -38,23 +38,23 @@
       "target": "plugin::users-permissions.user",
       "inversedBy": "orders"
     },
-    "orders_billing": {
-      "type": "relation",
-      "relation": "oneToOne",
-      "target": "api::order-billing.order-billing",
-      "inversedBy": "order"
-    },
-    "orders_products": {
+    "billing": {
       "type": "relation",
       "relation": "oneToMany",
-      "target": "api::order-products.order-products",
+      "target": "api::order-billing.order-billing",
       "mappedBy": "order"
     },
-    "orders_payment": {
+    "products": {
       "type": "relation",
-      "relation": "oneToOne",
-      "target": "api::orders-payment.orders-payment",
-      "inversedBy": "order"
+      "relation": "oneToMany",
+      "target": "api::order-product.order-product",
+      "mappedBy": "order"
+    },
+    "payment": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::order-payment.order-payment",
+      "mappedBy": "order"
     }
   }
 }

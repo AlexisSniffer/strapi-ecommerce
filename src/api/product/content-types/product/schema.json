@@ -4,7 +4,7 @@
   "info": {
     "singularName": "product",
     "pluralName": "products",
-    "displayName": "Products",
+    "displayName": "Product",
     "description": ""
   },
   "options": {
@@ -24,7 +24,8 @@
       },
       "type": "string",
       "required": true,
-      "unique": false
+      "maxLength": 100,
+      "regex": "^[A-Za-z0-9\\s\\-_]+$"
     },
     "slug": {
       "pluginOptions": {
@@ -34,7 +35,8 @@
       },
       "type": "uid",
       "targetField": "name",
-      "required": true
+      "required": true,
+      "maxLength": 100
     },
     "description": {
       "pluginOptions": {
@@ -43,14 +45,16 @@
         }
       },
       "type": "richtext",
-      "required": true
+      "required": true,
+      "maxLength": 500
     },
     "images": {
       "type": "media",
       "multiple": true,
       "required": true,
       "allowedTypes": [
-        "images"
+        "images",
+        "videos"
       ],
       "pluginOptions": {
         "i18n": {
@@ -65,9 +69,8 @@
         }
       },
       "type": "decimal",
-      "required": false,
-      "min": 1,
-      "default": 1
+      "required": true,
+      "min": 0
     },
     "discount": {
       "pluginOptions": {
@@ -75,7 +78,9 @@
           "localized": false
         }
       },
-      "type": "decimal"
+      "type": "decimal",
+      "required": true,
+      "min": 0
     },
     "isDiscount": {
       "pluginOptions": {
@@ -93,7 +98,8 @@
           "localized": false
         }
       },
-      "type": "datetime"
+      "type": "datetime",
+      "required": false
     },
     "stock": {
       "pluginOptions": {
@@ -101,7 +107,9 @@
           "localized": false
         }
       },
-      "type": "integer"
+      "type": "integer",
+      "required": false,
+      "min": 0
     },
     "ratings": {
       "pluginOptions": {
@@ -110,16 +118,15 @@
         }
       },
       "type": "integer",
-      "default": 0,
-      "max": 5,
       "required": true,
-      "min": 0
+      "min": 0,
+      "max": 5
     },
-    "subcategories": {
+    "categories": {
       "type": "relation",
       "relation": "manyToMany",
-      "target": "api::subcategory.subcategory",
-      "inversedBy": "products"
+      "target": "api::category.category",
+      "mappedBy": "products"
     },
     "brand": {
       "type": "relation",
@@ -137,34 +144,16 @@
       },
       "component": "variants.variants"
     },
-    "orders_products": {
-      "type": "relation",
-      "relation": "oneToMany",
-      "target": "api::order-products.order-products",
-      "mappedBy": "product"
-    },
     "deliveryTime": {
-      "pluginOptions": {
-        "i18n": {
-          "localized": true
-        }
-      },
-      "type": "enumeration",
-      "enum": [
-        "Inmediato",
-        "Retirar en tienda",
-        "En 24 horas",
-        "En 48 horas",
-        "En 72 horas",
-        "Más de 72 horas"
-      ],
-      "required": true,
-      "default": "Más de 72 horas"
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::delivery-time.delivery-time",
+      "inversedBy": "products"
     },
-    "reviews": {
+    "order_products": {
       "type": "relation",
       "relation": "oneToMany",
-      "target": "api::review.review",
+      "target": "api::order-product.order-product",
       "mappedBy": "product"
     }
   }

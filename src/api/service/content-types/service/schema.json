@@ -4,25 +4,59 @@
   "info": {
     "singularName": "service",
     "pluralName": "services",
-    "displayName": "Services",
+    "displayName": "Service",
     "description": ""
   },
   "options": {
     "draftAndPublish": true
   },
-  "pluginOptions": {},
+  "pluginOptions": {
+    "i18n": {
+      "localized": true
+    }
+  },
   "attributes": {
-    "title": {
+    "name": {
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
       "type": "string",
-      "required": true
+      "required": true,
+      "maxLength": 25,
+      "minLength": 5
     },
     "description": {
-      "type": "richtext",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "type": "text",
+      "default": "description",
+      "maxLength": 40,
+      "minLength": 5,
       "required": true
     },
     "icon": {
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
       "type": "string",
       "required": true
+    },
+    "order": {
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "type": "integer",
+      "min": 0,
+      "required": false
     }
   }
 }

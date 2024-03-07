@@ -1,0 +1,36 @@
+{
+  "kind": "collectionType",
+  "collectionName": "order_payments",
+  "info": {
+    "singularName": "order-payment",
+    "pluralName": "order-payments",
+    "displayName": "Order Payment",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "voucher": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images"
+      ]
+    },
+    "payment_method": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::payment-method.payment-method",
+      "inversedBy": "order_payments"
+    },
+    "order": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::order.order",
+      "inversedBy": "payment"
+    }
+  }
+}

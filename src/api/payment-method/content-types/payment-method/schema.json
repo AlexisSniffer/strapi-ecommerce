@@ -25,14 +25,6 @@
       "type": "string",
       "required": true
     },
-    "description": {
-      "pluginOptions": {
-        "i18n": {
-          "localized": true
-        }
-      },
-      "type": "richtext"
-    },
     "voucher": {
       "pluginOptions": {
         "i18n": {
@@ -43,10 +35,18 @@
       "default": false,
       "required": true
     },
-    "orders_payments": {
+    "description": {
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "type": "richtext"
+    },
+    "order_payments": {
       "type": "relation",
       "relation": "oneToMany",
-      "target": "api::orders-payment.orders-payment",
+      "target": "api::order-payment.order-payment",
       "mappedBy": "payment_method"
     }
   }

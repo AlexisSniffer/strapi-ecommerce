@@ -29,6 +29,10 @@
     "until": {
       "type": "datetime"
     },
+    "stock": {
+      "type": "integer",
+      "min": 0
+    },
     "variant": {
       "type": "component",
       "repeatable": true,
